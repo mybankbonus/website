@@ -74,6 +74,12 @@ input, select, textarea {
 
 /* Basic */
 
+.expandable{
+	font-style: italic;
+	text-decoration: underline;
+	text-decoration-style: dotted;
+}
+
 	@-ms-viewport {
 		width: device-width;
 	}
