@@ -76,8 +76,8 @@ input, select, textarea {
 
 .expandable{
 	font-style: italic;
-	text-decoration: underline;
-	text-decoration-style: dotted;
+	color: #585858;
+    border-bottom: dotted 1px rgba(88, 88, 88, 0.5);
 }
 
 	@-ms-viewport {
