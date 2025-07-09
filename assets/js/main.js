@@ -12,7 +12,8 @@
 		$footer = $('#footer'),
 		$main = $('#main'),
 		$modals = $('#modals'),
-		$modals_articles = $modals.children('article');
+		$modals_articles = $modals.children('article'),
+		mainScrollPos = 0;
 
 	// Breakpoints.
 		breakpoints({
@@ -419,7 +420,7 @@
 
 								// Window stuff.
 									$window
-										.scrollTop(0)
+										.scrollTop(mainScrollPos)
 										.triggerHandler('resize.flexbox-fix');
 
 								// Unlock.
@@ -512,6 +513,18 @@
 
 		// Scroll restoration.
 		// This prevents the page from scrolling back to the top on a hashchange.
+			
+			//Save the current scroll position when the main page is scrolled.
+			var $htmlbody = $('html,body');
+
+			$window
+				.on('scroll', function() {
+					if (location.hash == ''
+					|| location.hash == '#')
+						mainScrollPos = $htmlbody.scrollTop();
+				});
+
+
 			if ('scrollRestoration' in history)
 				history.scrollRestoration = 'manual';
 			else {
