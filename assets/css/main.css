@@ -2567,6 +2567,49 @@ input, select, textarea {
 			opacity: 0.25;
 		}
 
+/* Categories */
+
+	#categories {
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		justify-content: center;
+    	align-items: center;
+		-moz-flex-wrap: wrap;
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		position: relative;
+		margin: 0 0 -2.5em 0;
+	}
+
+		#categories a {
+			-moz-transition: background-color 0.5s ease, color 0.5s ease;
+			-webkit-transition: background-color 0.5s ease, color 0.5s ease;
+			-ms-transition: background-color 0.5s ease, color 0.5s ease;
+			transition: background-color 0.5s ease, color 0.5s ease;
+			margin: 0.25em;
+			background: rgb(192, 229, 186);
+			text-decoration: none;
+			box-shadow: inset 0 0 0 1px #000000;
+		}
+
+			#categories a.selected {
+				background: rgb(192, 229, 186);
+				box-shadow: inset 0 0 0 3px #000000 !important;
+			}
+
+			#categories a:hover {
+				background-color: rgb(186,195,185);
+				color: #ffffff !important;
+				box-shadow: inset 0 0 0 2px #000000;
+			}
+
+			#categories a:active {
+				background-color: rgba(186,195,185,0.5);
+			}
+		
 /* Tiles */
 
 	.tiles {

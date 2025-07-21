@@ -12,7 +12,10 @@
 		$footer = $('#footer'),
 		$main = $('#main'),
 		$modals = $('#modals'),
+		$categories = $('#categories'),
+		$tile_sections =	$main.find('.tiles'),
 		$modals_articles = $modals.children('article'),
+		$categories_buttons = $categories.children('a'),
 		mainScrollPos = 0;
 
 	// Breakpoints.
@@ -208,6 +211,29 @@
 					if (event.keyCode == 27)
 						$menu._hide();
 
+			});
+
+	// Categories.
+		$categories_buttons
+			.on('click', function(event) {
+
+				var id = $(this).attr('id');
+				var tile_id  = id + '-tiles';
+				//var buttons = $categories_buttons;
+
+				for (i = 0; i < $categories_buttons.length; i++) {
+					if ($categories_buttons[i].id == id)
+        				$categories_buttons[i].classList.add('selected')
+					else
+						$categories_buttons[i].classList.remove('selected');
+
+					console.log('tile-id: ' + tile_id);
+					console.log('tile section id : ' + $tile_sections[i].id);
+					if ($tile_sections[i].id == tile_id)
+						$tile_sections[i].style.display = ''
+					else
+						$tile_sections[i].style.display = 'none';
+	   			}
 			});
 	
 	// Modals.
