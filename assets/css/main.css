@@ -3335,7 +3335,8 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 
 			#modals article {
-				padding: 3.5rem 1rem 0.75rem 1rem ;
+				padding: 3.5rem 1rem 0.75rem 1rem;
+				width: 97.5%;
 			}
 
 		}
